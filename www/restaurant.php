@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="w3-light-grey">
 
 <!-- Sidebar -->
+<!--Hint: "Remember to try SSH login with user 'ssh' and a matching password.".-->
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:200px">
   <h3 class="w3-bar-item">Dashboard</h3>
   <a href="#" class="w3-bar-item w3-button">Menu Management</a>
