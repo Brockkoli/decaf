@@ -1,0 +1,5 @@
+*.sqlite
+*.zip
+*.log
+*.bak
+*.tar.gz
