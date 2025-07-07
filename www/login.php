@@ -1,18 +1,19 @@
 <?php
 $db = new SQLite3('database.sqlite');
-$message = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $password = $_POST['password']; // Ignored, SQLi allowed
+    $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = $db->query($query);
+    // VULNERABLE SQL (intentionally)
+    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $results = $db->query($query);
 
-    if ($result && $row = $result->fetchArray()) {
-        $message = "<div class='w3-panel w3-green'><p>Welcome, " . htmlspecialchars($row['email']) . "!</p><p>This is your dashboard. There's nothing here.</p></div>";
+    if ($results->fetchArray()) {
+        header("Location: restaurant.php");
+        exit();
     } else {
-        $message = "<div class='w3-panel w3-red'><p>Invalid login.</p></div>";
+        echo "<p style='color:red'>Invalid credentials</p>";
     }
 }
 ?>
