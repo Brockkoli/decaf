@@ -1,4 +1,4 @@
-# ☕ Decaf - OSCP-style CTF Box
+# ☕ Decaf - Linux CTF Box
 
 Decaf is a realistic Linux-based vulnerable machine designed for training in enumeration, cracking, and privilege escalation — packaged entirely in Docker.
 
