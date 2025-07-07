@@ -18,10 +18,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN rm -f /var/www/html/index.html
 
-# Set password and home directory for existing ftp user
-RUN useradd -m -s /bin/bash ftp && echo "ftp:ftp" | chpasswd
-COPY home/ftp/.bash_history /home/ftp/.bash_history
-RUN chown ftp:ftp /home/ftp/.bash_history
+# Set password and home directory for ssh user
+RUN useradd -m -s /bin/bash ssh && echo "ssh:ssh" | chpasswd
+COPY home/ssh/.bash_history /home/ssh/.bash_history
+RUN chown ssh:ssh /home/ssh/.bash_history
 
 # Create luna user with sudo permission for strace
 RUN useradd -m luna && echo "luna:cappuccino" | chpasswd && \
