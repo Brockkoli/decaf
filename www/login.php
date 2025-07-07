@@ -1,22 +1,28 @@
 <?php
-$db = new SQLite3('database.sqlite');
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$db = new PDO('sqlite:database.sqlite');
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // VULNERABLE SQL (intentionally)
+    // Vulnerable SQL injection query (intended)
     $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-    $results = $db->query($query);
+    $result = $db->query($query);
 
-    if ($results->fetchArray()) {
+    if ($result && $result->fetch()) {
+        $_SESSION['logged_in'] = true;
         header("Location: restaurant.php");
-        exit();
+        exit;
     } else {
-        echo "<p style='color:red'>Invalid credentials</p>";
+        $error = "Invalid email or password.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -61,6 +67,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <span class="w3-text-white" style="font-size:60px">Admin<br>Login</span>
   </div>
 </header>
+
+<?php if ($error): ?>
+    <div class="w3-panel w3-red">
+        <p><?= htmlspecialchars($error) ?></p>
+    </div>
+<?php endif; ?>
 
 <div class="w3-container login-form">
   <form method="POST" class="w3-card-4 w3-padding">
