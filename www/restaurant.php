@@ -4,6 +4,12 @@ if (!isset($_SESSION['logged_in'])) {
     header("Location: login.php");
     exit;
 }
+
+$search_result = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $query = htmlspecialchars($_POST['search']);
+    $search_result = "<strong>$query</strong> not found.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +45,19 @@ if (!isset($_SESSION['logged_in'])) {
     <p>📬 New Contact Messages: 2</p>
   </div>
 
+  <!-- Fake Search Bar -->
   <div class="w3-container w3-margin-top">
-    <p class="w3-small">This is a fake dashboard. Nothing works here.</p>
+    <h4>Search Menu / Reservations</h4>
+    <form method="POST">
+        <input class="w3-input w3-border w3-round" type="text" name="search" placeholder="Search...">
+        <button class="w3-button w3-dark-grey w3-margin-top" type="submit">Search</button>
+    </form>
+
+    <?php if ($search_result): ?>
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-margin-top">
+            <p><?= $search_result ?></p>
+        </div>
+    <?php endif; ?>
   </div>
 </div>
 
