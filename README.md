@@ -12,7 +12,7 @@ Decaf is a realistic Linux-based vulnerable machine designed for training in enu
 ## 🛠 Setup Instructions
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/decaf
+   git clone https://github.com/Brockkoli/decaf.git
    cd decaf
 
 2. Build the Docker image:
