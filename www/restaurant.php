@@ -33,6 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <!-- Page Content -->
+<!--
+Hint: "Remember to try SSH login with user 'ssh' and a matching password.".
+-->
 <div style="margin-left:200px">
   <div class="w3-container w3-teal">
     <h1>Welcome Admin</h1>
