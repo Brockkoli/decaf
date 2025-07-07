@@ -40,6 +40,7 @@ COPY ssh_banner.txt /etc/issue.net
 RUN echo 'Banner /etc/issue.net' >> /etc/ssh/sshd_config
 
 # Configure FTP
+RUN mkdir -p /var/run/vsftpd/empty
 COPY vsftpd.conf /etc/vsftpd.conf
 
 # Setup fake webapp
