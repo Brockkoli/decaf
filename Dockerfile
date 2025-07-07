@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 RUN rm -f /var/www/html/index.html
 
 # Set password and home directory for existing ftp user
-RUN echo "ftp:ftp" | chpasswd && mkdir -p /home/ftp && chown ftp:ftp /home/ftp
+RUN useradd -m -s /bin/bash ftp && echo "ftp:ftp" | chpasswd
 COPY home/ftp/.bash_history /home/ftp/.bash_history
 RUN chown ftp:ftp /home/ftp/.bash_history
 
