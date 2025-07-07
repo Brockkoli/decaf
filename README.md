@@ -17,9 +17,9 @@ Decaf is a realistic Linux-based vulnerable machine designed for training in enu
 
 2. Build the Docker image:
    ```bash
-   docker build -t decaf .
+   sudo docker build -t decaf .
    
 3. Run the container
    ```bash
-   docker run -it -p 8080:80 -p 2222:22 -p 2121:21 decaf
+   sudo docker run -it -p 8080:80 -p 2222:22 -p 2121:21 decaf
 =======
