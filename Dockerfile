@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     nano \
     && apt-get clean
 
+RUN rm -f /var/www/html/index.html
+
 # Set password and home directory for existing ftp user
 RUN echo "ftp:ftp" | chpasswd && mkdir -p /home/ftp && chown ftp:ftp /home/ftp
 COPY home/ftp/.bash_history /home/ftp/.bash_history
