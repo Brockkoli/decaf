@@ -5,7 +5,7 @@ Decaf is a realistic Linux-based vulnerable machine designed for training in enu
 ## 🧩 Challenge Overview
 
 **User Flag Path:** `/home/luna/local.txt`  
-**Root Flag Path:** `/home/luna/proof.txt`
+**Root Flag Path:** `/root/proof.txt`
 
 ---
 
