@@ -56,8 +56,17 @@ RUN chmod -R a+w /mnt/backup/etc
 
 # Flags
 COPY flags/local.txt /home/luna/local.txt
-COPY flags/proof.txt /home/luna/proof.txt
-RUN chown luna:luna /home/luna/*.txt
+COPY flags/proof.txt /root/proof.txt
+
+# Set ownership
+RUN chown luna:luna /home/luna/local.txt
+RUN chown root:root /root/proof.txt
+
+# Set permissions
+RUN chmod 755 /home/luna                # Allow ssh to ls and cat local.txt
+RUN chmod 644 /home/luna/local.txt      # World-readable
+RUN chmod 600 /root/proof.txt           # Root-only readable
+
 
 # Entrypoint to start all services
 COPY entrypoint.sh /entrypoint.sh
