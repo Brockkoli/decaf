@@ -22,4 +22,3 @@ Decaf is a realistic Linux-based vulnerable machine designed for training in enu
 3. Run the container
    ```bash
    sudo docker run -it -p 8080:80 -p 2222:22 -p 2121:21 decaf
-=======
