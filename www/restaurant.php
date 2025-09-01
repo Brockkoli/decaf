@@ -26,11 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- for now account set to default password. Need to change! -->
 
-<!-- Top Banner -->
-<div class="w3-container w3-center w3-padding w3-teal">
-    <h2>Welcome SSH</h2>
-</div>
-    
 <!-- Sidebar -->
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:200px">
   <h3 class="w3-bar-item">Dashboard</h3>
@@ -41,8 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- Page Content -->
 <div style="margin-left:200px">
+<!-- Banner to welcome user ssh -->
   <div class="w3-container w3-teal">
-    <h1>Welcome Admin</h1>
+    <h1>Welcome SSH</h1>
   </div>
 
   <div class="w3-container">
