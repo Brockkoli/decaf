@@ -24,8 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="w3-light-grey">
 
+<!-- for now account set to default password. Need to change! -->
+
+<!-- Top Banner -->
+<div class="w3-container w3-center w3-padding w3-teal">
+    <h2>Welcome SSH</h2>
+</div>
+    
 <!-- Sidebar -->
-<!--Hint: "Remember to try SSH login with user 'ssh' and a matching password.".-->
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:200px">
   <h3 class="w3-bar-item">Dashboard</h3>
   <a href="#" class="w3-bar-item w3-button">Menu Management</a>
@@ -34,9 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <!-- Page Content -->
-<!--
-Hint: "Remember to try SSH login with user 'ssh' and a matching password.".
--->
 <div style="margin-left:200px">
   <div class="w3-container w3-teal">
     <h1>Welcome Admin</h1>
@@ -49,7 +52,7 @@ Hint: "Remember to try SSH login with user 'ssh' and a matching password.".
     <p>📬 New Contact Messages: 2</p>
   </div>
 
-  <!-- Fake Search Bar -->
+  <!-- SeArCh BAr -->
   <div class="w3-container w3-margin-top">
     <h4>Search Menu / Reservations</h4>
     <form method="POST">
