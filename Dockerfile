@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 RUN rm -f /var/www/html/index.html
 
 # Set password and home directory for ssh user
-RUN useradd -m -s /bin/bash -g ssh ssh && echo "ssh:ssh" | chpasswd
+RUN useradd -m -s /bin/bash -g ssh ssh && echo "ssh:qwerty" | chpasswd
 COPY home/ssh/.bash_history /home/ssh/.bash_history
 RUN chown ssh:ssh /home/ssh/.bash_history
 
